@@ -16,36 +16,41 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="w-screen h-screen flex items-center justify-center bg-native-yellow">
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--bg-yellow: hsl(47, 88%, 63%)
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+
+	@font-face {
+		font-family: 'Figtree-SemiBold';
+		src: url('/public/fonts/Figtree-SemiBold.ttf');
+		font-weight: normal;
+  	font-style: normal;
+  	font-display: swap;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	@font-face {
+		font-family: 'Figtree-ExtraBold';
+		src: url('/public/fonts/Figtree-ExtraBold.ttf');
+		font-weight: normal;
+  	font-style: normal;
+  	font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Figtree-VariableFont';
+		src: url('/public/fonts/Figtree-VariableFont_wght.ttf');
+		font-weight: normal;
+  	font-style: normal;
+  	font-display: swap;
+	}
+
+	.bg-native-yellow {
+		background-color: var(--bg-yellow);
 	}
 </style>
